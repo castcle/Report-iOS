@@ -12,6 +12,10 @@
 		B7BE8072289D24C70066ADF9 /* Component.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BE8071289D24C70066ADF9 /* Component.framework */; };
 		B7BE8076289D24CD0066ADF9 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BE8075289D24CD0066ADF9 /* Core.framework */; };
 		B7BE8079289D24D30066ADF9 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BE8078289D24D30066ADF9 /* Networking.framework */; };
+		B7BE807C289D2CD40066ADF9 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7BE807B289D2CD40066ADF9 /* Report.storyboard */; };
+		B7BE807F289D2CF40066ADF9 /* ReportSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BE807E289D2CF30066ADF9 /* ReportSuccessViewController.swift */; };
+		B7BE8082289D2D9C0066ADF9 /* ReportOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BE8081289D2D9C0066ADF9 /* ReportOpener.swift */; };
+		B7BE8084289D2DB20066ADF9 /* ReportNibVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BE8083289D2DB20066ADF9 /* ReportNibVars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		B7BE8071289D24C70066ADF9 /* Component.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Component.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7BE8075289D24CD0066ADF9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7BE8078289D24D30066ADF9 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7BE807B289D2CD40066ADF9 /* Report.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
+		B7BE807E289D2CF30066ADF9 /* ReportSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportSuccessViewController.swift; sourceTree = "<group>"; };
+		B7BE8081289D2D9C0066ADF9 /* ReportOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportOpener.swift; sourceTree = "<group>"; };
+		B7BE8083289D2DB20066ADF9 /* ReportNibVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportNibVars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				B7BE8061289D23DC0066ADF9 /* Report.h */,
+				B7BE807B289D2CD40066ADF9 /* Report.storyboard */,
+				B7BE807D289D2CDB0066ADF9 /* ViewController */,
+				B7BE8080289D2D3D0066ADF9 /* Utilities */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -93,6 +104,23 @@
 				A9065AB4C10F6E3F6E80BA0C /* Pods_Report.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7BE807D289D2CDB0066ADF9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B7BE807E289D2CF30066ADF9 /* ReportSuccessViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B7BE8080289D2D3D0066ADF9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B7BE8083289D2DB20066ADF9 /* ReportNibVars.swift */,
+				B7BE8081289D2D9C0066ADF9 /* ReportOpener.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +167,7 @@
 				TargetAttributes = {
 					B7BE805D289D23DC0066ADF9 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -165,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7BE807C289D2CD40066ADF9 /* Report.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7BE8082289D2D9C0066ADF9 /* ReportOpener.swift in Sources */,
+				B7BE807F289D2CF40066ADF9 /* ReportSuccessViewController.swift in Sources */,
+				B7BE8084289D2DB20066ADF9 /* ReportNibVars.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +365,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 532984A62D3546F736201F7D /* Pods-Report.debug (production).xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -352,6 +386,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -361,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A1BFDF681CF57BF5CCBA2745 /* Pods-Report.release (production).xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -454,6 +490,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1B665E36AC48C50D6FFE3397 /* Pods-Report.debug (staging).xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -474,6 +511,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -547,6 +585,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DE53F5600EBC2EE61442AA9 /* Pods-Report.debug (development).xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -567,6 +606,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -634,6 +674,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5FBE055A73BF74D809542EE8 /* Pods-Report.release (staging).xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -721,6 +762,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A53EE8904681308987856FC6 /* Pods-Report.release (development).xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
