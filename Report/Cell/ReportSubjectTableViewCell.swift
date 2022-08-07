@@ -19,32 +19,35 @@
 //  Thailand 10160, or visit www.castcle.com if you need additional information
 //  or have any questions.
 //
-//  ReportNibVars.swift
+//  ReportSubjectTableViewCell.swift
 //  Report
 //
-//  Created by Castcle Co., Ltd. on 5/8/2565 BE.
+//  Created by Castcle Co., Ltd. on 7/8/2565 BE.
 //
 
-public struct ReportNibVars {
-    // MARK: - View Controller
-    public struct ViewController {
-        public static let reportSubject = "ReportSubjectViewController"
-        public static let reportSuccess = "ReportSuccessViewController"
+import UIKit
+import Core
+import Networking
+
+class ReportSubjectTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var nextImage: UIImageView!
+    @IBOutlet weak var subjectLabel: UILabel!
+    @IBOutlet weak var lineView: UIView!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.subjectLabel.font = UIFont.asset(.regular, fontSize: .overline)
+        self.subjectLabel.textColor = UIColor.Asset.white
+        self.lineView.backgroundColor = UIColor.Asset.cellBackground
+        self.nextImage.image = UIImage.init(icon: .castcle(.next), size: CGSize(width: 25, height: 25), textColor: UIColor.Asset.white)
     }
 
-    // MARK: - View
-    public struct Storyboard {
-        public static let report = "Report"
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
 
-    // MARK: - TableViewCell
-    public struct TableViewCell {
-        public static let reportSubjectHeader = "ReportSubjectHeaderTableViewCell"
-        public static let reportSubject = "ReportSubjectTableViewCell"
-        public static let reportSubjectFooter = "ReportSubjectFooterTableViewCell"
-    }
-
-    // MARK: - CollectionViewCell
-    public struct CollectionViewCell {
+    func configCell(reportSublect: ReportSubject) {
+        self.subjectLabel.text = reportSublect.name
     }
 }

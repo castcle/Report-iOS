@@ -29,12 +29,18 @@ import UIKit
 import Core
 
 public enum ReportScene {
+    case reportSubject(ReportSubjectViewModel)
     case reportSuccess(Bool, String)
 }
 
 public struct ReportOpener {
     public static func open(_ reportScene: ReportScene) -> UIViewController {
         switch reportScene {
+        case .reportSubject(let viewModel):
+            let storyboard: UIStoryboard = UIStoryboard(name: ReportNibVars.Storyboard.report, bundle: ConfigBundle.report)
+            let viewController = storyboard.instantiateViewController(withIdentifier: ReportNibVars.ViewController.reportSubject) as? ReportSubjectViewController
+            viewController?.viewModel = viewModel
+            return viewController ?? ReportSubjectViewController()
         case .reportSuccess(let isReportContent, let castcleId):
             let storyboard: UIStoryboard = UIStoryboard(name: ReportNibVars.Storyboard.report, bundle: ConfigBundle.report)
             let viewController = storyboard.instantiateViewController(withIdentifier: ReportNibVars.ViewController.reportSuccess) as? ReportSuccessViewController

@@ -19,32 +19,32 @@
 //  Thailand 10160, or visit www.castcle.com if you need additional information
 //  or have any questions.
 //
-//  ReportNibVars.swift
+//  ReportSubjectHeaderTableViewCell.swift
 //  Report
 //
-//  Created by Castcle Co., Ltd. on 5/8/2565 BE.
+//  Created by Castcle Co., Ltd. on 7/8/2565 BE.
 //
 
-public struct ReportNibVars {
-    // MARK: - View Controller
-    public struct ViewController {
-        public static let reportSubject = "ReportSubjectViewController"
-        public static let reportSuccess = "ReportSuccessViewController"
+import UIKit
+import Core
+
+class ReportSubjectHeaderTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var subjectHeaderLabel: UILabel!
+    @IBOutlet weak var lineView: UIView!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.subjectHeaderLabel.font = UIFont.asset(.regular, fontSize: .body)
+        self.subjectHeaderLabel.textColor = UIColor.Asset.white
+        self.lineView.backgroundColor = UIColor.Asset.cellBackground
     }
 
-    // MARK: - View
-    public struct Storyboard {
-        public static let report = "Report"
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
 
-    // MARK: - TableViewCell
-    public struct TableViewCell {
-        public static let reportSubjectHeader = "ReportSubjectHeaderTableViewCell"
-        public static let reportSubject = "ReportSubjectTableViewCell"
-        public static let reportSubjectFooter = "ReportSubjectFooterTableViewCell"
-    }
-
-    // MARK: - CollectionViewCell
-    public struct CollectionViewCell {
+    func configCell(reportType: ReportType) {
+        self.subjectHeaderLabel.text = "Why are you reporting this \(reportType == .content ? "Cast" : "User")?"
     }
 }
