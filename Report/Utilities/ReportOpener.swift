@@ -30,7 +30,8 @@ import Core
 
 public enum ReportScene {
     case reportSubject(ReportSubjectViewModel)
-    case reportSuccess(Bool, String)
+    case reportDetail(ReportDetailViewModel)
+    case reportSuccess(ReportType, String)
 }
 
 public struct ReportOpener {
@@ -41,10 +42,15 @@ public struct ReportOpener {
             let viewController = storyboard.instantiateViewController(withIdentifier: ReportNibVars.ViewController.reportSubject) as? ReportSubjectViewController
             viewController?.viewModel = viewModel
             return viewController ?? ReportSubjectViewController()
-        case .reportSuccess(let isReportContent, let castcleId):
+        case .reportDetail(let viewModel):
+            let storyboard: UIStoryboard = UIStoryboard(name: ReportNibVars.Storyboard.report, bundle: ConfigBundle.report)
+            let viewController = storyboard.instantiateViewController(withIdentifier: ReportNibVars.ViewController.reportDetail) as? ReportDetailViewController
+            viewController?.viewModel = viewModel
+            return viewController ?? ReportDetailViewController()
+        case .reportSuccess(let reportType, let castcleId):
             let storyboard: UIStoryboard = UIStoryboard(name: ReportNibVars.Storyboard.report, bundle: ConfigBundle.report)
             let viewController = storyboard.instantiateViewController(withIdentifier: ReportNibVars.ViewController.reportSuccess) as? ReportSuccessViewController
-            viewController?.isReportContent = isReportContent
+            viewController?.reportType = reportType
             viewController?.castcleId = castcleId
             return viewController ?? ReportSuccessViewController()
         }

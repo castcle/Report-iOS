@@ -24,6 +24,14 @@
 		B7BE807F289D2CF40066ADF9 /* ReportSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BE807E289D2CF30066ADF9 /* ReportSuccessViewController.swift */; };
 		B7BE8082289D2D9C0066ADF9 /* ReportOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BE8081289D2D9C0066ADF9 /* ReportOpener.swift */; };
 		B7BE8084289D2DB20066ADF9 /* ReportNibVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BE8083289D2DB20066ADF9 /* ReportNibVars.swift */; };
+		B7C5266E28A0E9ED003476BE /* ReportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5266D28A0E9ED003476BE /* ReportDetailViewController.swift */; };
+		B7C5267028A0F641003476BE /* ReportDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5266F28A0F641003476BE /* ReportDetailViewModel.swift */; };
+		B7C5267328A0F953003476BE /* ReportDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5267128A0F953003476BE /* ReportDetailTableViewCell.swift */; };
+		B7C5267428A0F953003476BE /* ReportDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7C5267228A0F953003476BE /* ReportDetailTableViewCell.xib */; };
+		B7C5267728A0F96E003476BE /* ReportReasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5267528A0F96E003476BE /* ReportReasonTableViewCell.swift */; };
+		B7C5267828A0F96E003476BE /* ReportReasonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7C5267628A0F96E003476BE /* ReportReasonTableViewCell.xib */; };
+		B7C5267B28A0F980003476BE /* ReportSubmitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5267928A0F980003476BE /* ReportSubmitTableViewCell.swift */; };
+		B7C5267C28A0F980003476BE /* ReportSubmitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7C5267A28A0F980003476BE /* ReportSubmitTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +59,14 @@
 		B7BE807E289D2CF30066ADF9 /* ReportSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportSuccessViewController.swift; sourceTree = "<group>"; };
 		B7BE8081289D2D9C0066ADF9 /* ReportOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportOpener.swift; sourceTree = "<group>"; };
 		B7BE8083289D2DB20066ADF9 /* ReportNibVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportNibVars.swift; sourceTree = "<group>"; };
+		B7C5266D28A0E9ED003476BE /* ReportDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailViewController.swift; sourceTree = "<group>"; };
+		B7C5266F28A0F641003476BE /* ReportDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailViewModel.swift; sourceTree = "<group>"; };
+		B7C5267128A0F953003476BE /* ReportDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailTableViewCell.swift; sourceTree = "<group>"; };
+		B7C5267228A0F953003476BE /* ReportDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportDetailTableViewCell.xib; sourceTree = "<group>"; };
+		B7C5267528A0F96E003476BE /* ReportReasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportReasonTableViewCell.swift; sourceTree = "<group>"; };
+		B7C5267628A0F96E003476BE /* ReportReasonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportReasonTableViewCell.xib; sourceTree = "<group>"; };
+		B7C5267928A0F980003476BE /* ReportSubmitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSubmitTableViewCell.swift; sourceTree = "<group>"; };
+		B7C5267A28A0F980003476BE /* ReportSubmitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportSubmitTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +107,12 @@
 				B715A3B1289FB7F700B80E3F /* ReportSubjectHeaderTableViewCell.xib */,
 				B715A3B4289FB80E00B80E3F /* ReportSubjectFooterTableViewCell.swift */,
 				B715A3B5289FB80E00B80E3F /* ReportSubjectFooterTableViewCell.xib */,
+				B7C5267128A0F953003476BE /* ReportDetailTableViewCell.swift */,
+				B7C5267228A0F953003476BE /* ReportDetailTableViewCell.xib */,
+				B7C5267528A0F96E003476BE /* ReportReasonTableViewCell.swift */,
+				B7C5267628A0F96E003476BE /* ReportReasonTableViewCell.xib */,
+				B7C5267928A0F980003476BE /* ReportSubmitTableViewCell.swift */,
+				B7C5267A28A0F980003476BE /* ReportSubmitTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -99,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				B715A3A8289FA64A00B80E3F /* ReportSubjectViewModel.swift */,
+				B7C5266F28A0F641003476BE /* ReportDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -149,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				B715A3A4289FA57600B80E3F /* ReportSubjectViewController.swift */,
+				B7C5266D28A0E9ED003476BE /* ReportDetailViewController.swift */,
 				B7BE807E289D2CF30066ADF9 /* ReportSuccessViewController.swift */,
 			);
 			path = ViewController;
@@ -236,8 +260,11 @@
 			files = (
 				B715A3AF289FB41E00B80E3F /* ReportSubjectTableViewCell.xib in Resources */,
 				B7BE807C289D2CD40066ADF9 /* Report.storyboard in Resources */,
+				B7C5267428A0F953003476BE /* ReportDetailTableViewCell.xib in Resources */,
 				B715A3B3289FB7F700B80E3F /* ReportSubjectHeaderTableViewCell.xib in Resources */,
+				B7C5267C28A0F980003476BE /* ReportSubmitTableViewCell.xib in Resources */,
 				B715A3B7289FB80E00B80E3F /* ReportSubjectFooterTableViewCell.xib in Resources */,
+				B7C5267828A0F96E003476BE /* ReportReasonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,11 +301,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7BE8082289D2D9C0066ADF9 /* ReportOpener.swift in Sources */,
+				B7C5267028A0F641003476BE /* ReportDetailViewModel.swift in Sources */,
 				B715A3A5289FA57600B80E3F /* ReportSubjectViewController.swift in Sources */,
+				B7C5267B28A0F980003476BE /* ReportSubmitTableViewCell.swift in Sources */,
 				B715A3AE289FB41E00B80E3F /* ReportSubjectTableViewCell.swift in Sources */,
+				B7C5266E28A0E9ED003476BE /* ReportDetailViewController.swift in Sources */,
+				B7C5267728A0F96E003476BE /* ReportReasonTableViewCell.swift in Sources */,
 				B715A3B2289FB7F700B80E3F /* ReportSubjectHeaderTableViewCell.swift in Sources */,
 				B7BE807F289D2CF40066ADF9 /* ReportSuccessViewController.swift in Sources */,
 				B715A3A9289FA64A00B80E3F /* ReportSubjectViewModel.swift in Sources */,
+				B7C5267328A0F953003476BE /* ReportDetailTableViewCell.swift in Sources */,
 				B7BE8084289D2DB20066ADF9 /* ReportNibVars.swift in Sources */,
 				B715A3B6289FB80E00B80E3F /* ReportSubjectFooterTableViewCell.swift in Sources */,
 			);

@@ -80,6 +80,36 @@
             </objects>
             <point key="canvasLocation" x="-351" y="110"/>
         </scene>
+        <!--Report Detail View Controller-->
+        <scene sceneID="0Nn-JO-3vA">
+            <objects>
+                <viewController storyboardIdentifier="ReportDetailViewController" hidesBottomBarWhenPushed="YES" id="FKA-zo-W8g" customClass="ReportDetailViewController" customModule="Report" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p2i-ov-ZdG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7YT-YR-Dw7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BHR-7f-OhI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7YT-YR-Dw7" firstAttribute="top" secondItem="p2i-ov-ZdG" secondAttribute="top" id="Ks2-zM-0h9"/>
+                            <constraint firstAttribute="bottom" secondItem="7YT-YR-Dw7" secondAttribute="bottom" id="LRF-Vq-7O7"/>
+                            <constraint firstAttribute="trailing" secondItem="7YT-YR-Dw7" secondAttribute="trailing" id="ddw-PR-3Lv"/>
+                            <constraint firstItem="7YT-YR-Dw7" firstAttribute="leading" secondItem="p2i-ov-ZdG" secondAttribute="leading" id="oIL-M3-Igu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="7YT-YR-Dw7" id="g5Z-sl-qsb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aAp-We-7Hv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="369" y="110"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="85y-sd-WZ8">

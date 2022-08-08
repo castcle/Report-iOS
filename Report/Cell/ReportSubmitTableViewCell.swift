@@ -19,36 +19,43 @@
 //  Thailand 10160, or visit www.castcle.com if you need additional information
 //  or have any questions.
 //
-//  ReportNibVars.swift
+//  ReportSubmitTableViewCell.swift
 //  Report
 //
-//  Created by Castcle Co., Ltd. on 5/8/2565 BE.
+//  Created by Castcle Co., Ltd. on 8/8/2565 BE.
 //
 
-public struct ReportNibVars {
-    // MARK: - View Controller
-    public struct ViewController {
-        public static let reportSubject = "ReportSubjectViewController"
-        public static let reportDetail = "ReportDetailViewController"
-        public static let reportSuccess = "ReportSuccessViewController"
+import UIKit
+import Core
+import Networking
+
+protocol ReportSubmitTableViewCellDelegate: AnyObject {
+    func didSubmit(_ reportSubmitTableViewCell: ReportSubmitTableViewCell)
+}
+
+class ReportSubmitTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var confirmButton: UIButton!
+
+    public var delegate: ReportSubmitTableViewCellDelegate?
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 
-    // MARK: - View
-    public struct Storyboard {
-        public static let report = "Report"
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
 
-    // MARK: - TableViewCell
-    public struct TableViewCell {
-        public static let reportSubjectHeader = "ReportSubjectHeaderTableViewCell"
-        public static let reportSubject = "ReportSubjectTableViewCell"
-        public static let reportSubjectFooter = "ReportSubjectFooterTableViewCell"
-        public static let reportDetail = "ReportDetailTableViewCell"
-        public static let reportReason = "ReportReasonTableViewCell"
-        public static let reportSubmit = "ReportSubmitTableViewCell"
+    @IBAction func confirmAction(_ sender: Any) {
+        self.delegate?.didSubmit(self)
     }
 
-    // MARK: - CollectionViewCell
-    public struct CollectionViewCell {
+    func configCell(subject: ReportSubject, reason: String) {
+        if subject.slug == "something-else" && reason.isEmpty {
+            self.confirmButton.activeButton(isActive: false, fontSize: .overline)
+        } else {
+            self.confirmButton.activeButton(isActive: true, fontSize: .overline)
+        }
     }
 }

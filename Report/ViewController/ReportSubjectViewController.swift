@@ -58,7 +58,7 @@ class ReportSubjectViewController: UIViewController {
     }
 
     func setupNavBar() {
-        self.customNavigationBar(.secondary, title: "Report \(self.viewModel.reportType == .content ? "Cast" : "User"))")
+        self.customNavigationBar(.secondary, title: "Report \(self.viewModel.reportType == .content ? "Cast" : "User")")
     }
 
     func configureTableView() {
@@ -103,6 +103,12 @@ extension ReportSubjectViewController: UITableViewDelegate, UITableViewDataSourc
             return cell ?? ReportSubjectFooterTableViewCell()
         default:
             return UITableViewCell()
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == ReportSubjectViewControllerSection.subject.rawValue {
+            Utility.currentViewController().navigationController?.pushViewController(ReportOpener.open(.reportDetail(ReportDetailViewModel(reportType: self.viewModel.reportType, castcleId: self.viewModel.castcleId, contentId: self.viewModel.contentId, subject: self.viewModel.subjects[indexPath.row]))), animated: true)
         }
     }
 }

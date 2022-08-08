@@ -19,36 +19,35 @@
 //  Thailand 10160, or visit www.castcle.com if you need additional information
 //  or have any questions.
 //
-//  ReportNibVars.swift
+//  ReportDetailTableViewCell.swift
 //  Report
 //
-//  Created by Castcle Co., Ltd. on 5/8/2565 BE.
+//  Created by Castcle Co., Ltd. on 8/8/2565 BE.
 //
 
-public struct ReportNibVars {
-    // MARK: - View Controller
-    public struct ViewController {
-        public static let reportSubject = "ReportSubjectViewController"
-        public static let reportDetail = "ReportDetailViewController"
-        public static let reportSuccess = "ReportSuccessViewController"
+import UIKit
+import Core
+import Networking
+
+class ReportDetailTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var subjectDetailLabel: UILabel!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.subjectDetailLabel.font = UIFont.asset(.regular, fontSize: .overline)
+        self.subjectDetailLabel.textColor = UIColor.Asset.white
     }
 
-    // MARK: - View
-    public struct Storyboard {
-        public static let report = "Report"
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
 
-    // MARK: - TableViewCell
-    public struct TableViewCell {
-        public static let reportSubjectHeader = "ReportSubjectHeaderTableViewCell"
-        public static let reportSubject = "ReportSubjectTableViewCell"
-        public static let reportSubjectFooter = "ReportSubjectFooterTableViewCell"
-        public static let reportDetail = "ReportDetailTableViewCell"
-        public static let reportReason = "ReportReasonTableViewCell"
-        public static let reportSubmit = "ReportSubmitTableViewCell"
-    }
-
-    // MARK: - CollectionViewCell
-    public struct CollectionViewCell {
+    func configCell(reportType: ReportType, subject: ReportSubject) {
+        if subject.slug == "something-else" {
+            self.subjectDetailLabel.text = "Are there any additional issues with this \(reportType == .content ? "Cast" : "User") you want to report? Tell us more."
+        } else {
+            self.subjectDetailLabel.text = subject.name
+        }
     }
 }

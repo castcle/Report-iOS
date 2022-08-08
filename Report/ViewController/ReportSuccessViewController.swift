@@ -36,7 +36,7 @@ class ReportSuccessViewController: UIViewController {
     @IBOutlet var thankLabel: UILabel!
     @IBOutlet var termLabel: ActiveLabel!
 
-    var isReportContent: Bool = true
+    var reportType: ReportType = .content
     var castcleId: String = ""
 
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class ReportSuccessViewController: UIViewController {
         self.setupNevBar()
         self.thankLabel.font = UIFont.asset(.regular, fontSize: .body)
         self.thankLabel.textColor = UIColor.Asset.white
-        if self.isReportContent {
+        if self.reportType == .content {
             self.termLabel.text = "If we find this cast violating Castcle Terms of Service, we will take action on it"
         } else {
             self.termLabel.text = "If we find \(self.castcleId) violating Castcle Terms of Service, we will take action on it"
@@ -74,18 +74,17 @@ class ReportSuccessViewController: UIViewController {
         self.customNavigationBar(.primary, title: "Report")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIButton())
         var rightButton: [UIBarButtonItem] = []
-
         let icon = UIButton()
         icon.setTitle("Done", for: .normal)
         icon.titleLabel?.font = UIFont.asset(.bold, fontSize: .head4)
         icon.setTitleColor(UIColor.Asset.white, for: .normal)
         icon.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
         rightButton.append(UIBarButtonItem(customView: icon))
-
         self.navigationItem.rightBarButtonItems = rightButton
     }
 
     @objc private func doneAction() {
-        self.navigationController?.popViewController(animated: true)
+        let viewControllers: [UIViewController] = Utility.currentViewController().navigationController!.viewControllers as [UIViewController]
+        Utility.currentViewController().navigationController!.popToViewController(viewControllers[viewControllers.count - 4], animated: true)
     }
 }
