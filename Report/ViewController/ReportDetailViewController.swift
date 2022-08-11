@@ -118,6 +118,8 @@ extension ReportDetailViewController: UITableViewDelegate, UITableViewDataSource
 extension ReportDetailViewController: ReportReasonTableViewCellDelegate {
     func didValueChange(_ reportReasonTableViewCell: ReportReasonTableViewCell, reason: String) {
         self.viewModel.reason = reason
+        let indexPath = IndexPath(item: 0, section: 2)
+        self.tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
 
