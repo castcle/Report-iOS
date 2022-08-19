@@ -27,15 +27,14 @@
 
 import UIKit
 import Core
+import Component
 import Defaults
-import JGProgressHUD
 
 class ReportDetailViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
 
     var viewModel = ReportDetailViewModel(reportType: .content, castcleId: "", contentId: "")
-    private let hud = JGProgressHUD()
 
     enum ReportDetailViewControllerSection: Int, CaseIterable {
         case subject = 0
@@ -47,13 +46,12 @@ class ReportDetailViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.Asset.darkGraphiteBlue
         self.configureTableView()
-        self.hud.textLabel.text = "Reporting"
         self.viewModel.didReportFinish = {
-            self.hud.dismiss()
+            CCLoading.shared.dismiss()
             Utility.currentViewController().navigationController?.pushViewController(ReportOpener.open(.reportSuccess(self.viewModel.reportType, self.viewModel.castcleId)), animated: true)
         }
         self.viewModel.didError = {
-            self.hud.dismiss()
+            CCLoading.shared.dismiss()
         }
     }
 
@@ -126,10 +124,10 @@ extension ReportDetailViewController: ReportReasonTableViewCellDelegate {
 extension ReportDetailViewController: ReportSubmitTableViewCellDelegate {
     func didSubmit(_ reportSubmitTableViewCell: ReportSubmitTableViewCell) {
         if self.viewModel.subject.slug == "something-else" && !self.viewModel.reason.isEmpty {
-            self.hud.show(in: self.view)
+            CCLoading.shared.show(text: "Reporting")
             self.viewModel.report()
         } else if self.viewModel.subject.slug != "something-else" {
-            self.hud.show(in: self.view)
+            CCLoading.shared.show(text: "Reporting")
             self.viewModel.report()
         }
     }
